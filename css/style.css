@@ -1,0 +1,1099 @@
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css);
+@import url(common.css);
+@import url(button.css);
+@import url(//fonts.googleapis.com/earlyaccess/jejumyeongjo.css);
+
+/* 스크롤 */
+html {
+  scroll-behavior: smooth;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  letter-spacing: -2px;
+}
+/* Common CSS */
+section {
+  padding: 100px 0;
+}
+.header {
+  padding-bottom: 50px;
+  position: relative;
+}
+.header:after {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #111111;
+}
+.article {
+  margin-top: 30px;
+}
+.article_title {
+  font-family: "Jeju Myeongjo", serif;
+  font-weight: normal !important;
+  font-size: 60px !important;
+  letter-spacing: -1px;
+  margin: 30px 0 10px;
+  text-transform: uppercase;
+  display: block;
+}
+.subtitle {
+  display: inline-block;
+}
+.subtitle_area {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+table thead tr {
+  height: 30px;
+}
+table th,
+table td {
+  padding: 10px;
+}
+table tr:nth-child(even) {
+  background-color: rgba(41, 39, 36, 0.761);
+}
+table tr:nth-child(odd) {
+  background-color: rgba(41, 37, 33, 0.761);
+}
+table th {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+}
+table .noBorder {
+  border: none !important;
+}
+
+
+/* Header________________________________________ */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;
+  background-color: rgba(255, 255, 255, 0.5);
+  z-index: 10;
+}
+/* nav */
+.menu_wrap {
+  width: 1400px;
+  height: inherit;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.menu_wrap ul li a {
+  font-weight: 400;
+  letter-spacing: 0 !important;
+}
+.logo {
+  filter: invert(1);
+}
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+.menu li {
+  flex: 1;
+}
+.menu li a {
+  font-weight: 600;
+  text-transform: capitalize;
+  color: #000;
+  position: relative;
+}
+.menu li a::before {
+  content: "";
+  position: absolute;
+  width: 0%;
+  height: 3px;
+  bottom: -10px;
+  left: 0;
+  background-color: #000;
+  transition: 0.35s;
+}
+.menu li a:hover::before {
+  width: 100%;
+}
+.menu li a.active::before {
+  width: 100%;
+}
+/* Section________________________________________ */
+/* ---------------- Section : Main ---------------- */
+.main {
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+}
+.main:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url("../img/visual04.jpg") no-repeat center;
+  background-size: cover;
+  animation: zoomIn 10s linear infinite alternate;
+  z-index: -5;
+}
+.title {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  width: 735px;
+}
+.title p {
+  color: #fff;
+  text-align: center;
+  animation: textIn 4s ease-in;
+}
+.title p:first-child {
+  font-size: 40px;
+}
+.title p:last-child {
+  font-family: "Jeju Myeongjo", serif;
+  font-weight: normal;
+  font-size: 92px;
+  margin-top: 20px;
+  letter-spacing: -1px;
+}
+/* Mouse Wheele */
+.mouse-box {
+  position: fixed;
+  bottom: 180px;
+  right: 200px;
+  z-index: 5;
+}
+.mouse {
+  border: 2px solid #555;
+  position: absolute;
+  width: 32px;
+  height: 45px;
+  border-radius: 30px;
+}
+.wheele {
+  position: absolute; /* inline-block으로 변경됨 */
+  width: 4px;
+  height: 15px;
+  background-color: #555;
+  border-radius: 4px;
+  left: 12px;
+  top: 10px;
+  animation: wheele 1.5s linear infinite;
+}
+.arrow-down {
+  margin-top: -10px;
+  position: relative;
+}
+.arrow1,
+.arrow2,
+.arrow3 {
+  color: #555;
+  font-size: 31px;
+  line-height: 10px;
+  position: absolute;
+  animation: arrow_down 1s infinite alternate;
+}
+.arrow1 {
+  top: 70px;
+  left: 0;
+  animation-delay: 1s;
+}
+.arrow2 {
+  top: 90px;
+  left: 0;
+  animation-delay: 1.5s;
+}
+.arrow3 {
+  top: 110px;
+  left: 0;
+  animation-delay: 2s;
+}
+@keyframes wheele {
+  0% {
+    top: 12px;
+  }
+  50% {
+    top: 20px;
+  }
+  100% {
+    top: 12px;
+  }
+}
+@keyframes arrow_down {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+  0% {
+    opacity: 0;
+  }
+}
+/* ---------------- Section : 1.About ---------------- */
+.main_01 {
+  padding: 200px 0;
+}
+.company_wrap {
+  /* width: 1400px;
+  height: 1200px;
+  margin: auto; */
+}
+.company_content {
+  width: 1400px;
+  height: 1200px;
+  margin: auto;
+  position: relative;
+}
+.company_content .line {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 150px;
+  background-color: #111;
+  margin-bottom: 200px;
+}
+.about_text {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1400px;
+  height: 690px;
+  color: #000;
+  animation-delay: 3s;
+  animation: imgChange 5s linear infinite both;
+}
+.about_text:after {
+  content: "";
+  width: 100%;
+  height: 2.5px;
+  background-color: #111;
+  position: absolute;
+  top: 780px;
+  left: 0;
+}
+.about_text h1 {
+  /* ABOUT */
+  font-size: 140px;
+  padding-right: 200px;
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  mix-blend-mode: lighten;
+  color: #000;
+  background-color: #fff;
+  font-family: "Jeju Myeongjo", serif;
+  font-weight: bold;
+  display: inline-block;
+}
+.about_text span {
+  font-size: 20px;
+  margin: 15px;
+  line-height: 1.5em;
+}
+.about_text span:nth-of-type(1) {
+  /* 최고의 시설 */
+  writing-mode: vertical-rl;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 0;
+  left: 10%;
+}
+.about_text span:nth-of-type(2) {
+  /* 럭스티지 호텔 */
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  font-weight: normal;
+  font-size: 30px;
+  line-height: 1.2em;
+  color: #222;
+  display: inline-block;
+  position: absolute;
+  top: 0;
+  left: 15%;
+}
+.company_content > span {
+  /* 고객의 휴식 */
+  position: absolute;
+  text-align: center;
+  top: 90%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 24px;
+  width: 420px;
+}
+.hotel_img {
+  position: absolute;
+  top: 300px;
+  right: 0;
+}
+.hotel_img img {
+  width: 600px;
+  height: 560px;
+  left: 400px;
+  object-fit: cover;
+}
+.main_01:hover .company_content {
+  opacity: 1;
+}
+/* ---------------- Section : 2.Accommodation ---------------- */
+.main_02 {
+  background-color: #f8f8fa;
+  padding-bottom: 0;
+}
+.roomType_wrap {
+  width: 1400px;
+  height: 1200px;
+  margin: auto;
+}
+.roomType_content {
+}
+.roomType_content button {
+  float: right;
+}
+.roomType_content > article {
+}
+/* 슬라이드 영역 */
+.roomType_tabs {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.roomType_imgs {
+  width: calc(1400px * 4);
+  height: 735px;
+  display: flex;
+}
+.roomType_imgs div {
+  width: 1400px;
+  height: inherit;
+  position: relative;
+  transition: 1s;
+}
+.roomType_imgs div:nth-child(1) {
+  background: url("../img/room/ondol02.jpg");
+  background-size: cover;
+}
+.roomType_imgs div:nth-child(2) {
+  background: url("../img/room/gallery_double01.jpg");
+  background-size: cover;
+}
+.roomType_imgs div:nth-child(3) {
+  background: url("../img/room/deluxe01.jpg");
+  background-size: cover;
+}
+.roomType_imgs div:nth-child(4) {
+  background: url("../img/room/seamarq03.jpg");
+  background-size: cover;
+}
+input[name="r_tabmenu"] {
+  display: none;
+}
+input[id="roomType01"]:checked ~ .roomType_tabs .roomType_imgs div {
+  transform: translateX(0);
+  animation: roomType01 7s linear infinite alternate both;
+}
+input[id="roomType02"]:checked ~ .roomType_tabs .roomType_imgs div {
+  transform: translateX(-1400px);
+  animation: roomType02 4s linear infinite alternate both;
+  animation-delay: 0.5s;
+}
+input[id="roomType03"]:checked ~ .roomType_tabs .roomType_imgs div {
+  transform: translateX(-2800px);
+  animation: roomType03 4s linear infinite alternate both;
+  animation-delay: 0.5s;
+}
+input[id="roomType04"]:checked ~ .roomType_tabs .roomType_imgs div {
+  transform: translateX(-4200px);
+  animation: roomType04 7s linear infinite alternate both;
+  animation-delay: 0.5s;
+}
+.r_slide_btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 15px;
+}
+.r_slide_btn label {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 200;
+  font-size: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+.r_slide_btn label[for="roomType01"]:before,
+.r_slide_btn label[for="roomType02"]:before,
+.r_slide_btn label[for="roomType03"]:before,
+.r_slide_btn label[for="roomType04"]:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: inherit;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: 200;
+  color: #666;
+  text-align: center;
+  letter-spacing: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transition: 0.3s;
+}
+.r_slide_btn label[for="roomType01"]:before {
+  content: "Premium Deluxe";
+}
+.r_slide_btn label[for="roomType02"]:before {
+  content: "Gallery Double";
+}
+.r_slide_btn label[for="roomType03"]:before {
+  content: "Studio Double";
+}
+.r_slide_btn label[for="roomType04"]:before {
+  content: "Suite";
+}
+.r_slide_btn button {
+  margin-top: 50px;
+}
+input[id="roomType01"]:checked ~ .r_slide_btn label[for="roomType01"],
+input[id="roomType02"]:checked ~ .r_slide_btn label[for="roomType02"],
+input[id="roomType03"]:checked ~ .r_slide_btn label[for="roomType03"],
+input[id="roomType04"]:checked ~ .r_slide_btn label[for="roomType04"] {
+  font-weight: 400;
+}
+input[id="roomType01"]:checked ~ .r_slide_btn label[for="roomType01"]:before,
+input[id="roomType02"]:checked ~ .r_slide_btn label[for="roomType02"]:before,
+input[id="roomType03"]:checked ~ .r_slide_btn label[for="roomType03"]:before,
+input[id="roomType04"]:checked ~ .r_slide_btn label[for="roomType04"]:before {
+  top: 100%;
+  opacity: 1;
+}
+/* ---------------- Section : 2.다이닝 ---------------- */
+.main_03 {
+  background-color: #f8f8fa;
+}
+.dining_wrap {
+  width: 1400px;
+  height: 1200px;
+  margin: auto;
+}
+.dining_content {
+}
+.dining_img {
+  width: inherit;
+  height: 800px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: 1fr;
+  gap: 10px;
+}
+.dining_img .area {
+  padding-bottom: 50px;
+  height: 100%;
+  position: relative;
+}
+.dining_img .area:nth-of-type(1) {
+  width: 800px;
+  height: 100%;
+  grid-row: 2 span;
+}
+.dining_img .area .dining01,
+.dining_img .area .dining02,
+.dining_img .area .dining03 {
+  margin-top: 20px;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+}
+.dining_img .area .dining01 img,
+.dining_img .area .dining02 img,
+.dining_img .area .dining03 img {
+  width: 100%;
+  height: inherit;
+  object-fit: cover;
+}
+.dining_img .area span {
+  display: block;
+  font-size: 20px;
+  margin-bottom: 15px;
+  text-align: left;
+  color: #333;
+}
+.dining_img .area .dining01:before,
+.dining_img .area .dining02:before,
+.dining_img .area .dining03:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 0;
+  transition: 0.5s;
+  overflow: hidden;
+}
+.dining_img .area .dining01:hover:before,
+.dining_img .area .dining02:hover:before,
+.dining_img .area .dining03:hover:before {
+  opacity: 1;
+  cursor: pointer;
+}
+/* table */
+.dining_img div .table_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+  opacity: 0;
+  z-index: 5;
+}
+.dining_img div table {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 510px;
+  color: #d2d1d5;
+  letter-spacing: 0;
+}
+/* hover table */
+.dining_img div:hover .table_wrap {
+  transition: 0.8s;
+  opacity: 1;
+}
+/* table end */
+/* ---------------- Section : 5.레져 ---------------- */
+.main_05 {
+  background-color: #222;
+  padding-bottom: 0;
+}
+.leisure_wrap {
+  width: 1400px;
+  height: 1200px;
+  margin: auto;
+}
+.leisure_content {
+}
+.leisure_content .header {
+  color: #f8f8f8;
+}
+.leisure_content .header:after {
+  background-color: #f8f8f8;
+}
+.gallery {
+  height: 735px;
+  display: flex;
+}
+.gallery li {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.gallery li:nth-child(1) {
+  background: url(../img/the_pool01.jpg) no-repeat center center;
+  background-size: cover;
+}
+.gallery li:nth-child(2) {
+  background: url(../img/the_gym01.jpg) no-repeat center center;
+  background-size: cover;
+}
+.gallery li:nth-child(3) {
+  background: url(../img/treatment02.jpg) no-repeat center center;
+  background-size: cover;
+}
+.gallery li:nth-child(4) {
+  background: url(../img/thermal_suite03.jpg) no-repeat center center;
+  background-size: cover;
+}
+.gallery li:nth-child(5) {
+  background: url(../img/kidCamp02.jpg) no-repeat center center;
+  background-size: cover;
+}
+.gallery li:hover {
+  flex: 3;
+}
+/* 딤드 */
+.gallery li:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: -1;
+}
+.gallery .content {
+  position: absolute;
+  transition: 0.5s;
+  width: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+.gallery .content h2 {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  font-weight: 500;
+  font-size: 28px;
+  color: #000;
+  font-style: italic;
+}
+.gallery .content p {
+  text-align: center;
+  font-size: 20px;
+  font-weight: 300;
+  color: #000;
+  font-style: italic;
+  margin-bottom: 50px;
+}
+.gallery .content button {
+  opacity: 0;
+}
+.gallery li:nth-of-type(5) .content h2 {
+  margin-bottom: 50px;
+}
+.gallery li:hover:before {
+  transition: 0.5s;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+.gallery li:hover .content h2,
+.gallery li:hover .content p {
+  color: #fff;
+}
+.gallery li:hover .content button {
+  transition-delay: 0.2s;
+  opacity: 1;
+}
+/* ---------------- Section : 6.부대시설 ---------------- */
+.main_06 {
+  background-color: #222;
+}
+.facilities_wrap {
+  width: 1400px;
+  height: 1200px;
+  margin: auto;
+}
+.facilities_content {
+}
+.facilities_content .header {
+  color: #f8f8f8;
+}
+.facilities_content .header:after {
+  background-color: #f8f8f8;
+}
+input[name="f_tabmenu"] {
+  display: none;
+}
+/* 슬라이드 영역 */
+.tabs {
+  position: relative;
+  width: 100%;
+  height: 735px;
+  overflow: hidden;
+}
+.tabs:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -100%;
+  width: 100%;
+  height: 500px;
+  background: linear-gradient(to top, rgb(17, 17, 17, 0.5), transparent);
+  transition: 0.5s;
+}
+.tabs:hover:after {
+  bottom: 0;
+}
+.facilities_img_wrap {
+  width: calc(1400px * 5);
+  height: 735px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.facilities_img_wrap .f_img {
+  width: 1400px;
+  height: inherit;
+  position: relative;
+  transition: 0.8s;
+}
+.facilities_img_wrap > div:nth-of-type(1) {
+  background: url("../img/library03.jpg") no-repeat center center;
+  background-size: cover;
+}
+.facilities_img_wrap > div:nth-of-type(2) {
+  background: url("../img/business_center02.jpg") no-repeat center center;
+  background-size: cover;
+}
+.facilities_img_wrap > div:nth-of-type(3) {
+  background: url("../img/theshop03.jpg") no-repeat center center;
+  background-size: cover;
+}
+.facilities_img_wrap > div:nth-of-type(4) {
+  background: url("../img/arena01.jpg") no-repeat center center;
+  background-size: cover;
+}
+.facilities_img_wrap > div:nth-of-type(5) {
+  background: url("../img/pavilion02.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+/* table */
+.facilities_img_wrap .f_img .table_wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  z-index: 5;
+  transition: 0.8s;
+}
+.facilities_img_wrap .f_img .table_wrap table {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  color: #d2d1d5;
+  letter-spacing: 0;
+  transition: 0.8s;
+}
+/* hover table */
+.tabs:hover .table_wrap {
+  transition: 0.8s;
+  opacity: 1;
+}
+/* table end */
+
+/* 이미지 */
+input[id="tab1"]:checked ~ .tabs .facilities_img_wrap .f_img {
+  transform: translateX(0);
+}
+input[id="tab2"]:checked ~ .tabs .facilities_img_wrap .f_img {
+  transform: translateX(-100%);
+}
+input[id="tab3"]:checked ~ .tabs .facilities_img_wrap .f_img {
+  transform: translateX(-200%);
+}
+input[id="tab4"]:checked ~ .tabs .facilities_img_wrap .f_img {
+  transform: translateX(-300%);
+}
+input[id="tab5"]:checked ~ .tabs .facilities_img_wrap .f_img {
+  transform: translateX(-400%);
+}
+.f_slide_btn {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  color: #f8f8f8;
+  margin-top: 15px;
+}
+.f_slide_btn label {
+  display: inline-block;
+  width: 150px;
+  padding: 10px;
+  text-align: center;
+  font-weight: 200;
+  font-size: 20px;
+  margin: 0 auto;
+  position: relative;
+}
+.f_slide_btn label[for="tab1"]:before,
+.f_slide_btn label[for="tab2"]:before,
+.f_slide_btn label[for="tab3"]:before,
+.f_slide_btn label[for="tab4"]:before,
+.f_slide_btn label[for="tab5"]:before {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: inherit;
+  transform: translateX(-50%);
+  font-size: 16px;
+  font-weight: 200;
+  color: #666;
+  text-align: center;
+  letter-spacing: 0;
+  white-space: nowrap;
+  opacity: 0;
+  transition: 0.3s;
+}
+.f_slide_btn label[for="tab1"]:before {
+  content: "The Library";
+}
+.f_slide_btn label[for="tab2"]:before {
+  content: "Business Center";
+}
+.f_slide_btn label[for="tab3"]:before {
+  content: "The Shop";
+}
+.f_slide_btn label[for="tab4"]:before {
+  content: "The Arena";
+}
+.f_slide_btn label[for="tab5"]:before {
+  content: "Gallery";
+}
+input[id="tab1"]:checked ~ .f_slide_btn label[for="tab1"],
+input[id="tab2"]:checked ~ .f_slide_btn label[for="tab2"],
+input[id="tab3"]:checked ~ .f_slide_btn label[for="tab3"],
+input[id="tab4"]:checked ~ .f_slide_btn label[for="tab4"],
+input[id="tab5"]:checked ~ .f_slide_btn label[for="tab5"] {
+  font-weight: 400;
+}
+input[id="tab1"]:checked ~ .f_slide_btn label[for="tab1"]:before,
+input[id="tab2"]:checked ~ .f_slide_btn label[for="tab2"]:before,
+input[id="tab3"]:checked ~ .f_slide_btn label[for="tab3"]:before,
+input[id="tab4"]:checked ~ .f_slide_btn label[for="tab4"]:before,
+input[id="tab5"]:checked ~ .f_slide_btn label[for="tab5"]:before {
+  top: 100%;
+  opacity: 1;
+}
+/* ---------------- Section : Wedding Banner ---------------- */
+.wedding_banner {
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-color: rgba(0, 0, 0, 0.1);
+  z-index: 1;
+}
+.wedding_banner::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 400px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  background: url("../img/wedding_img_02.jpg") no-repeat center center;
+  background-size: cover;
+  z-index: -1;
+}
+.wedding_banner > div {
+  position: absolute;
+  top: 50%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+}
+.wedding_banner > div h1,
+.wedding_banner > div span {
+  display: block;
+  margin: 10px auto;
+  color: #222;
+}
+.wedding_banner > div h1 {
+  font-size: 40px;
+  font-weight: normal;
+  margin-bottom: 15px;
+}
+.wedding_banner > div span {
+  font-weight: 300;
+}
+.wedding_banner > div button {
+  float: left;
+  margin-top: 15px;
+}
+.wedding_banner:hover,
+.wedding_banner:hover:before {
+  height: 600px;
+  transition: 1s ease-in;
+}
+.wedding_banner:hover div h1 {
+  transform-origin: left;
+  transform: scale(1.1);
+  transition: 1s ease-in;
+}
+/* Footer________________________________________ */
+footer {
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  padding: 20px 0;
+  background-color: #111;
+}
+.footer_wrap {
+  position: absolute;
+  width: 1400px;
+  height: inherit;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer_logo {
+  flex: 1;
+  padding-bottom: 64px;
+}
+.footer_wrap nav {
+  flex: 4;
+}
+.footer_menu li a,
+address {
+  color: #fff;
+}
+.footer_menu {
+  display: flex;
+}
+.footer_menu li {
+  margin: 15px 15px 15px 0;
+}
+address {
+  letter-spacing: 0;
+  font-style: normal;
+}
+.footer_copy {
+  margin-top: 10px;
+  display: block;
+}
+.footer_copy {
+  letter-spacing: 1px;
+  font-style: normal;
+  font-size: 12px;
+  color: #d8d5d5;
+}
+.sns i {
+  float: right;
+  color: #fff;
+  font-size: 15px;
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+  background-color: #111;
+  text-align: center;
+  line-height: 25px;
+  margin: 1px;
+  transition: 0.5s;
+}
+.sns i:hover {
+  background-color: #eee;
+  color: #111;
+}
+/* animation________________________________________ */
+/* text effect */
+@keyframes textIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    display: 1;
+  }
+}
+@keyframes zoomIn {
+  0% {
+    -ms-transform: scale(1, 1);
+    transform: scale(1, 1) translateZ(1px);
+  }
+  100% {
+    -ms-transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2) translateZ(1px);
+  }
+}
+@keyframes imgChange {
+  0% {
+    background: url("../img/visual01.jpg") no-repeat;
+    background-size: cover;
+  }
+  50% {
+    background: url("../img/visual02.jpg") no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url("../img/visual01.jpg") no-repeat;
+    background-size: cover;
+  }
+}
+@keyframes roomType01 {
+  0% {
+    background: url("../img/room/ondol02.jpg") no-repeat;
+    background-size: cover;
+  }
+  50% {
+    background: url("../img/room/double01.jpg") no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url("../img/room/twin02.jpg") no-repeat;
+    background-size: cover;
+  }
+}
+@keyframes roomType02 {
+  0% {
+    background: url("../img/room/gallery_double01.jpg") no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url("../img/room/gallery_double02.jpg") no-repeat;
+    background-size: cover;
+  }
+}
+@keyframes roomType03 {
+  0% {
+    background: url("../img/room/deluxe01.jpg") no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url("../img/room/deluxe02.jpg") no-repeat;
+    background-size: cover;
+  }
+}
+@keyframes roomType04 {
+  0% {
+    background: url("../img/room/hoanjae01.jpg") no-repeat;
+    background-size: cover;
+  }
+  30% {
+    background: url("../img/room/executive01.jpg") no-repeat;
+    background-size: cover;
+  }
+  65% {
+    background: url("../img/room/corner01.jpg") no-repeat;
+    background-size: cover;
+  }
+  100% {
+    background: url("../img/room/presidential02.jpg") no-repeat;
+    background-size: cover;
+  }
+}
